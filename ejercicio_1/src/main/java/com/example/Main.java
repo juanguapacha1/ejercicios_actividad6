@@ -23,13 +23,19 @@ public class Main {
     }
     // Método para calcular el salario devengado
     public static double calcularSalarioDevengado(int salarioBase, int horasTrabajo, int horasExtras) {
-        //hjskhdkha
-        return 0;
+        double salarioPorHora = salarioBase/horasTrabajo;//234 375
+        double salarioHorasExtras = salarioPorHora * 1.25 * horasExtras;
+        double devengoTotal = salarioBase + salarioHorasExtras + auxilioTransporte;
+        return devengoTotal;
     }
 
     // Método para calcular las deducciones
     public static double calcularDeducciones(double salarioDevengado, double auxilioTransporte) {
-        // Implementar solución
-        return 0;
+        double deducciones = salarioDevengado * 0.08 + auxilioTransporte;
+        return deducciones;
+
     }
-}
+    public static double calcularSalarioNeto(double salarioDevengado, double deducciones) {
+        double salarioNeto = salarioDevengado - deducciones;
+        return salarioNeto;
+} 
