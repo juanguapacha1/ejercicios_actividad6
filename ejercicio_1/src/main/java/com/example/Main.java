@@ -3,12 +3,12 @@ package com.example;
 public class Main {
     public static void main(String[] args) {
         String nombre = "Juan Zapata";
-        int salarioBase = 45000000;
+        int salarioBase = 4500000;
         int horasTrabajo = 192;
         int horasExtras = 10;
-        double auxilioTransporte = 162000;
+        int auxilioTransporte = 162000;
         // Cálculo de la nómina
-        double salarioDevengado = calcularSalarioDevengado(salarioBase, horasTrabajo, horasExtras);
+        double salarioDevengado = calcularSalarioDevengado(salarioBase, horasTrabajo, horasExtras, auxilioTransporte);
         double deducciones = calcularDeducciones(salarioDevengado, auxilioTransporte);
         double salarioNeto = salarioDevengado - deducciones;
 
@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Salario neto: $" + salarioNeto);
     }
     // Método para calcular el salario devengado
-    public static double calcularSalarioDevengado(int salarioBase, int horasTrabajo, int horasExtras) {
+    public static double calcularSalarioDevengado(int salarioBase, int horasTrabajo, int horasExtras, int auxilioTransporte) {
         double salarioPorHora = salarioBase/horasTrabajo;//234 375
         double salarioHorasExtras = salarioPorHora * 1.25 * horasExtras;
         double devengoTotal = salarioBase + salarioHorasExtras + auxilioTransporte;
@@ -39,3 +39,4 @@ public class Main {
         double salarioNeto = salarioDevengado - deducciones;
         return salarioNeto;
 } 
+}
